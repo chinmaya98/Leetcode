@@ -1,13 +1,25 @@
 class Solution {
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
-        int maxcandies = 0;
-        for(int candy : candies){
-            maxcandies = Math.max(candy, maxcandies);
+       List<Boolean> result = new ArrayList<>();
+
+        // Input validation
+        if (candies == null || extraCandies == 0) {
+            return result;
         }
-        List<Boolean> result = new ArrayList<>();
-        for (int candy : candies){
-            result.add(candy+extraCandies >= maxcandies);
+
+        // Find the current maximum number of candies any kid has
+        int maxCandies = 0;
+        for (int candy : candies) {
+            if (candy < 0) {
+                return new ArrayList<>();
+            }
+            maxCandies = Math.max(maxCandies, candy);
         }
-       return result;
+
+        for (int candy : candies) {
+            result.add(candy + extraCandies >= maxCandies);
+        }
+
+        return result;
     }
 }
