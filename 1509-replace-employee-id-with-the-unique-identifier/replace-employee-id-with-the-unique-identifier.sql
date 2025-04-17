@@ -1,3 +1,3 @@
-SELECT empuni.unique_id, emp.name
-FROM Employees emp
-LEFT JOIN EmployeeUNI empuni on emp.id = empuni.id
+SELECT unique_id, name
+FROM Employees Emp
+LEFT JOIN EmployeeUNI EMU on Emp.id = EMU.id 
