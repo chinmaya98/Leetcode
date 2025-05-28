@@ -3,4 +3,7 @@ class Solution:
         if len(s) != len(t):
             return False
 
-        return Counter(s) == Counter(t)
+        if Counter(s) == Counter(t):
+            return True
+        else:
+            return False
