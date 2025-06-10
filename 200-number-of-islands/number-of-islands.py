@@ -15,9 +15,9 @@ class Solution:
                 x,y = q.popleft()
                 for dx,dy in Directions:
                     nx,ny = x+dx,y+dy
-                    if 0<=nx<ROW and 0<=ny<COL and grid[nx][ny] == "1" and (nx,ny) not in visited:
-                        q.append((nx,ny))
-                        visited.add((nx,ny))
+                    if nx in range(ROW) and ny in range(COL) and grid[nx][ny] == "1" and (nx, ny) not in visited:
+                        q.append((nx, ny))
+                        visited.add((nx,ny)) 
 
         for r in range(ROW):
             for c in range(COL):
